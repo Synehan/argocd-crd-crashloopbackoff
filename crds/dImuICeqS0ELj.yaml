@@ -1,0 +1,51 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    components.gke.io/component-version: networkpolicy-calico-1.0.1
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{"components.gke.io/component-version":"networkpolicy-calico-1.0.1"},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","kubernetes.io/cluster-service":"true"},"name":"bgppeers.crd.projectcalico.org"},"spec":{"group":"crd.projectcalico.org","names":{"kind":"BGPPeer","plural":"bgppeers","singular":"bgppeer"},"scope":"Cluster","version":"v1"}}
+  creationTimestamp: "2020-02-05T08:41:58Z"
+  generation: 1
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    kubernetes.io/cluster-service: "true"
+  name: bgppeers.crd.projectcalico.org
+  resourceVersion: "84913737"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/bgppeers.crd.projectcalico.org
+  uid: b6742035-0572-4347-a596-3dc7f163bd27
+spec:
+  conversion:
+    strategy: None
+  group: crd.projectcalico.org
+  names:
+    kind: BGPPeer
+    listKind: BGPPeerList
+    plural: bgppeers
+    singular: bgppeer
+  preserveUnknownFields: true
+  scope: Cluster
+  version: v1
+  versions:
+  - name: v1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: BGPPeer
+    listKind: BGPPeerList
+    plural: bgppeers
+    singular: bgppeer
+  conditions:
+  - lastTransitionTime: "2020-02-05T08:41:58Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1

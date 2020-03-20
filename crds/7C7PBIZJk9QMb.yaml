@@ -1,0 +1,138 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    helm.sh/hook-delete-policy: before-hook-creation
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{"helm.sh/hook-delete-policy":"before-hook-creation"},"creationTimestamp":null,"labels":{"app":"gatekeeper-operator","chart":"gatekeeper-operator","controller-tools.k8s.io":"1.0","heritage":"Tiller","release":"opa-gatekeeper"},"name":"constrainttemplates.templates.gatekeeper.sh"},"spec":{"group":"templates.gatekeeper.sh","names":{"kind":"ConstraintTemplate","plural":"constrainttemplates","shortNames":["constraints"]},"scope":"Cluster","validation":{"openAPIV3Schema":{"properties":{"apiVersion":{"description":"APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources","type":"string"},"kind":{"description":"Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds","type":"string"},"metadata":{"type":"object"},"spec":{"properties":{"crd":{"properties":{"spec":{"properties":{"names":{"properties":{"kind":{"type":"string"}},"type":"object"},"validation":{"type":"object"}},"type":"object"}},"type":"object"},"targets":{"items":{"properties":{"libs":{"items":{"type":"string"},"type":"array"},"rego":{"type":"string"},"target":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"},"status":{"properties":{"byPod":{"items":{"properties":{"errors":{"items":{"properties":{"code":{"type":"string"},"location":{"type":"string"},"message":{"type":"string"}},"required":["code","message"],"type":"object"},"type":"array"},"id":{"description":"a unique identifier for the pod that wrote the status","type":"string"}},"type":"object"},"type":"array"},"created":{"type":"boolean"}},"type":"object"}}}},"version":"v1beta1","versions":[{"name":"v1beta1","served":true,"storage":true},{"name":"v1alpha1","served":true,"storage":false}]}}
+  creationTimestamp: "2020-02-07T10:49:00Z"
+  generation: 1
+  labels:
+    app: gatekeeper-operator
+    chart: gatekeeper-operator
+    controller-tools.k8s.io: "1.0"
+    heritage: Tiller
+    release: opa-gatekeeper
+  name: constrainttemplates.templates.gatekeeper.sh
+  resourceVersion: "88189831"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/constrainttemplates.templates.gatekeeper.sh
+  uid: f44024c6-f039-4b70-a646-b36488dda782
+spec:
+  conversion:
+    strategy: None
+  group: templates.gatekeeper.sh
+  names:
+    kind: ConstraintTemplate
+    listKind: ConstraintTemplateList
+    plural: constrainttemplates
+    shortNames:
+    - constraints
+    singular: constrainttemplate
+  preserveUnknownFields: true
+  scope: Cluster
+  validation:
+    openAPIV3Schema:
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          properties:
+            crd:
+              properties:
+                spec:
+                  properties:
+                    names:
+                      properties:
+                        kind:
+                          type: string
+                      type: object
+                    validation:
+                      type: object
+                  type: object
+              type: object
+            targets:
+              items:
+                properties:
+                  libs:
+                    items:
+                      type: string
+                    type: array
+                  rego:
+                    type: string
+                  target:
+                    type: string
+                type: object
+              type: array
+          type: object
+        status:
+          properties:
+            byPod:
+              items:
+                properties:
+                  errors:
+                    items:
+                      properties:
+                        code:
+                          type: string
+                        location:
+                          type: string
+                        message:
+                          type: string
+                      required:
+                      - code
+                      - message
+                      type: object
+                    type: array
+                  id:
+                    description: a unique identifier for the pod that wrote the status
+                    type: string
+                type: object
+              type: array
+            created:
+              type: boolean
+          type: object
+  version: v1beta1
+  versions:
+  - name: v1beta1
+    served: true
+    storage: true
+  - name: v1alpha1
+    served: true
+    storage: false
+status:
+  acceptedNames:
+    kind: ConstraintTemplate
+    listKind: ConstraintTemplateList
+    plural: constrainttemplates
+    shortNames:
+    - constraints
+    singular: constrainttemplate
+  conditions:
+  - lastTransitionTime: "2020-02-07T10:49:00Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  - lastTransitionTime: "2020-02-07T10:49:00Z"
+    message: 'spec.validation.openAPIV3Schema.type: Required value: must not be empty
+      at the root'
+    reason: Violations
+    status: "True"
+    type: NonStructuralSchema
+  storedVersions:
+  - v1beta1

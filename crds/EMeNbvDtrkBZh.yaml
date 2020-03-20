@@ -1,0 +1,47 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{},"name":"projectalertgroups.management.cattle.io"},"spec":{"conversion":{"strategy":"None"},"group":"management.cattle.io","names":{"kind":"ProjectAlertGroup","listKind":"ProjectAlertGroupList","plural":"projectalertgroups","singular":"projectalertgroup"},"scope":"Namespaced","version":"v3","versions":[{"name":"v3","served":true,"storage":true}]}}
+  creationTimestamp: "2020-01-10T11:05:35Z"
+  generation: 1
+  name: projectalertgroups.management.cattle.io
+  resourceVersion: "68514449"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/projectalertgroups.management.cattle.io
+  uid: 209ded7e-3399-11ea-9722-4201ac100009
+spec:
+  conversion:
+    strategy: None
+  group: management.cattle.io
+  names:
+    kind: ProjectAlertGroup
+    listKind: ProjectAlertGroupList
+    plural: projectalertgroups
+    singular: projectalertgroup
+  preserveUnknownFields: true
+  scope: Namespaced
+  version: v3
+  versions:
+  - name: v3
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ProjectAlertGroup
+    listKind: ProjectAlertGroupList
+    plural: projectalertgroups
+    singular: projectalertgroup
+  conditions:
+  - lastTransitionTime: "2020-01-10T11:05:35Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v3

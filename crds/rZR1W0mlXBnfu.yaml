@@ -1,0 +1,47 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{},"name":"templateversions.management.cattle.io"},"spec":{"conversion":{"strategy":"None"},"group":"management.cattle.io","names":{"kind":"TemplateVersion","listKind":"TemplateVersionList","plural":"templateversions","singular":"templateversion"},"scope":"Cluster","version":"v3","versions":[{"name":"v3","served":true,"storage":true}]}}
+  creationTimestamp: "2020-01-10T11:05:40Z"
+  generation: 1
+  name: templateversions.management.cattle.io
+  resourceVersion: "68514584"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/templateversions.management.cattle.io
+  uid: 23a751fc-3399-11ea-9927-4201ac100008
+spec:
+  conversion:
+    strategy: None
+  group: management.cattle.io
+  names:
+    kind: TemplateVersion
+    listKind: TemplateVersionList
+    plural: templateversions
+    singular: templateversion
+  preserveUnknownFields: true
+  scope: Cluster
+  version: v3
+  versions:
+  - name: v3
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: TemplateVersion
+    listKind: TemplateVersionList
+    plural: templateversions
+    singular: templateversion
+  conditions:
+  - lastTransitionTime: "2020-01-10T11:05:40Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v3

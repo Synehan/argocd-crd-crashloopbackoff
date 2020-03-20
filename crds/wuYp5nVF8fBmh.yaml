@@ -1,0 +1,72 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    helm.sh/resource-policy: keep
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{"helm.sh/resource-policy":"keep"},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","app":"certmanager","chart":"certmanager","heritage":"Tiller","k8s-app":"istio","release":"istio"},"name":"challenges.certmanager.k8s.io"},"spec":{"additionalPrinterColumns":[{"JSONPath":".status.state","name":"State","type":"string"},{"JSONPath":".spec.dnsName","name":"Domain","type":"string"},{"JSONPath":".status.reason","name":"Reason","type":"string"},{"JSONPath":".metadata.creationTimestamp","description":"CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.\n\nPopulated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata","name":"Age","type":"date"}],"group":"certmanager.k8s.io","names":{"kind":"Challenge","plural":"challenges"},"scope":"Namespaced","version":"v1alpha1"}}
+  creationTimestamp: "2019-10-25T12:20:16Z"
+  generation: 7
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    app: certmanager
+    chart: certmanager
+    heritage: Tiller
+    k8s-app: istio
+    release: istio
+  name: challenges.certmanager.k8s.io
+  resourceVersion: "30697430"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/challenges.certmanager.k8s.io
+  uid: cd8dde8e-f721-11e9-8cf3-4201ac10000b
+spec:
+  additionalPrinterColumns:
+  - JSONPath: .status.state
+    name: State
+    type: string
+  - JSONPath: .spec.dnsName
+    name: Domain
+    type: string
+  - JSONPath: .status.reason
+    name: Reason
+    type: string
+  - JSONPath: .metadata.creationTimestamp
+    description: |-
+      CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.
+
+      Populated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+    name: Age
+    type: date
+  conversion:
+    strategy: None
+  group: certmanager.k8s.io
+  names:
+    kind: Challenge
+    listKind: ChallengeList
+    plural: challenges
+    singular: challenge
+  preserveUnknownFields: true
+  scope: Namespaced
+  version: v1alpha1
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: Challenge
+    listKind: ChallengeList
+    plural: challenges
+    singular: challenge
+  conditions:
+  - lastTransitionTime: "2019-10-25T12:20:16Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1alpha1

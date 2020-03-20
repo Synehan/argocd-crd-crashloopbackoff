@@ -1,0 +1,47 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{},"name":"clustermonitorgraphs.management.cattle.io"},"spec":{"conversion":{"strategy":"None"},"group":"management.cattle.io","names":{"kind":"ClusterMonitorGraph","listKind":"ClusterMonitorGraphList","plural":"clustermonitorgraphs","singular":"clustermonitorgraph"},"scope":"Namespaced","version":"v3","versions":[{"name":"v3","served":true,"storage":true}]}}
+  creationTimestamp: "2020-01-10T11:05:36Z"
+  generation: 1
+  name: clustermonitorgraphs.management.cattle.io
+  resourceVersion: "68514471"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/clustermonitorgraphs.management.cattle.io
+  uid: 211c1140-3399-11ea-834d-4201ac100006
+spec:
+  conversion:
+    strategy: None
+  group: management.cattle.io
+  names:
+    kind: ClusterMonitorGraph
+    listKind: ClusterMonitorGraphList
+    plural: clustermonitorgraphs
+    singular: clustermonitorgraph
+  preserveUnknownFields: true
+  scope: Namespaced
+  version: v3
+  versions:
+  - name: v3
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ClusterMonitorGraph
+    listKind: ClusterMonitorGraphList
+    plural: clustermonitorgraphs
+    singular: clustermonitorgraph
+  conditions:
+  - lastTransitionTime: "2020-01-10T11:05:36Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v3

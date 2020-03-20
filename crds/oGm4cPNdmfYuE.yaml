@@ -1,0 +1,69 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    helm.sh/resource-policy: keep
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{"helm.sh/resource-policy":"keep"},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","app":"istio-mixer","chart":"istio","heritage":"Tiller","k8s-app":"istio","release":"istio"},"name":"httpapispecbindings.config.istio.io"},"spec":{"group":"config.istio.io","names":{"categories":["istio-io","apim-istio-io"],"kind":"HTTPAPISpecBinding","plural":"httpapispecbindings","singular":"httpapispecbinding"},"scope":"Namespaced","version":"v1alpha2"}}
+  creationTimestamp: "2019-08-29T15:54:40Z"
+  generation: 1
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    app: istio-mixer
+    chart: istio
+    heritage: Tiller
+    k8s-app: istio
+    release: istio
+  name: httpapispecbindings.config.istio.io
+  resourceVersion: "27414082"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/httpapispecbindings.config.istio.io
+  uid: 4f423c90-ca75-11e9-900c-4201ac10000b
+spec:
+  additionalPrinterColumns:
+  - JSONPath: .metadata.creationTimestamp
+    description: |-
+      CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.
+
+      Populated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+    name: Age
+    type: date
+  conversion:
+    strategy: None
+  group: config.istio.io
+  names:
+    categories:
+    - istio-io
+    - apim-istio-io
+    kind: HTTPAPISpecBinding
+    listKind: HTTPAPISpecBindingList
+    plural: httpapispecbindings
+    singular: httpapispecbinding
+  preserveUnknownFields: true
+  scope: Namespaced
+  version: v1alpha2
+  versions:
+  - name: v1alpha2
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    categories:
+    - istio-io
+    - apim-istio-io
+    kind: HTTPAPISpecBinding
+    listKind: HTTPAPISpecBindingList
+    plural: httpapispecbindings
+    singular: httpapispecbinding
+  conditions:
+  - lastTransitionTime: "2019-08-29T15:54:40Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1alpha2

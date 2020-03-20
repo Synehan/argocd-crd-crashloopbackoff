@@ -1,0 +1,44 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: "2020-01-10T11:06:03Z"
+  generation: 1
+  name: clustertemplates.management.cattle.io
+  resourceVersion: "68514855"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/clustertemplates.management.cattle.io
+  uid: 3106ffbd-3399-11ea-9722-4201ac100009
+spec:
+  conversion:
+    strategy: None
+  group: management.cattle.io
+  names:
+    kind: ClusterTemplate
+    listKind: ClusterTemplateList
+    plural: clustertemplates
+    singular: clustertemplate
+  preserveUnknownFields: true
+  scope: Namespaced
+  version: v3
+  versions:
+  - name: v3
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ClusterTemplate
+    listKind: ClusterTemplateList
+    plural: clustertemplates
+    singular: clustertemplate
+  conditions:
+  - lastTransitionTime: "2020-01-10T11:06:03Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v3

@@ -1,0 +1,57 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile"},"name":"scalingpolicies.scalingpolicy.kope.io"},"spec":{"group":"scalingpolicy.kope.io","names":{"kind":"ScalingPolicy","plural":"scalingpolicies"},"scope":"Namespaced","version":"v1alpha1"}}
+  creationTimestamp: "2019-08-29T15:35:21Z"
+  generation: 1
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+  name: scalingpolicies.scalingpolicy.kope.io
+  resourceVersion: "5339456"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/scalingpolicies.scalingpolicy.kope.io
+  uid: 9cdacb93-ca72-11e9-a60a-4201ac100006
+spec:
+  additionalPrinterColumns:
+  - JSONPath: .metadata.creationTimestamp
+    description: |-
+      CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.
+
+      Populated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+    name: Age
+    type: date
+  conversion:
+    strategy: None
+  group: scalingpolicy.kope.io
+  names:
+    kind: ScalingPolicy
+    listKind: ScalingPolicyList
+    plural: scalingpolicies
+    singular: scalingpolicy
+  preserveUnknownFields: true
+  scope: Namespaced
+  version: v1alpha1
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ScalingPolicy
+    listKind: ScalingPolicyList
+    plural: scalingpolicies
+    singular: scalingpolicy
+  conditions:
+  - lastTransitionTime: "2019-08-29T15:35:21Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1alpha1

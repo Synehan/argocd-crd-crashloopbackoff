@@ -1,0 +1,51 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    components.gke.io/component-version: networkpolicy-calico-1.0.1
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{"components.gke.io/component-version":"networkpolicy-calico-1.0.1"},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","kubernetes.io/cluster-service":"true"},"name":"ipamconfigs.crd.projectcalico.org"},"spec":{"group":"crd.projectcalico.org","names":{"kind":"IPAMConfig","plural":"ipamconfigs","singular":"ipamconfig"},"scope":"Cluster","version":"v1"}}
+  creationTimestamp: "2020-02-05T08:41:59Z"
+  generation: 1
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    kubernetes.io/cluster-service: "true"
+  name: ipamconfigs.crd.projectcalico.org
+  resourceVersion: "84913756"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/ipamconfigs.crd.projectcalico.org
+  uid: 4f231aa2-2877-480b-a717-0b7dcdf3db1a
+spec:
+  conversion:
+    strategy: None
+  group: crd.projectcalico.org
+  names:
+    kind: IPAMConfig
+    listKind: IPAMConfigList
+    plural: ipamconfigs
+    singular: ipamconfig
+  preserveUnknownFields: true
+  scope: Cluster
+  version: v1
+  versions:
+  - name: v1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: IPAMConfig
+    listKind: IPAMConfigList
+    plural: ipamconfigs
+    singular: ipamconfig
+  conditions:
+  - lastTransitionTime: "2020-02-05T08:41:59Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1

@@ -1,0 +1,51 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    helm.sh/hook: crd-install
+    helm.sh/hook-delete-policy: before-hook-creation
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{"helm.sh/hook":"crd-install","helm.sh/hook-delete-policy":"before-hook-creation"},"labels":{"app.kubernetes.io/name":"velero"},"name":"podvolumerestores.velero.io"},"spec":{"group":"velero.io","names":{"kind":"PodVolumeRestore","plural":"podvolumerestores"},"scope":"Namespaced","version":"v1"}}
+  creationTimestamp: "2019-08-30T09:59:04Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/name: velero
+  name: podvolumerestores.velero.io
+  resourceVersion: "70354301"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/podvolumerestores.velero.io
+  uid: cc9069cc-cb0c-11e9-917e-4201ac100009
+spec:
+  conversion:
+    strategy: None
+  group: velero.io
+  names:
+    kind: PodVolumeRestore
+    listKind: PodVolumeRestoreList
+    plural: podvolumerestores
+    singular: podvolumerestore
+  preserveUnknownFields: true
+  scope: Namespaced
+  version: v1
+  versions:
+  - name: v1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: PodVolumeRestore
+    listKind: PodVolumeRestoreList
+    plural: podvolumerestores
+    singular: podvolumerestore
+  conditions:
+  - lastTransitionTime: "2019-08-30T09:59:04Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1

@@ -1,0 +1,44 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: "2020-01-10T11:06:03Z"
+  generation: 1
+  name: pipelinesettings.project.cattle.io
+  resourceVersion: "68514843"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/pipelinesettings.project.cattle.io
+  uid: 30ed1998-3399-11ea-834d-4201ac100006
+spec:
+  conversion:
+    strategy: None
+  group: project.cattle.io
+  names:
+    kind: PipelineSetting
+    listKind: PipelineSettingList
+    plural: pipelinesettings
+    singular: pipelinesetting
+  preserveUnknownFields: true
+  scope: Namespaced
+  version: v3
+  versions:
+  - name: v3
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: PipelineSetting
+    listKind: PipelineSettingList
+    plural: pipelinesettings
+    singular: pipelinesetting
+  conditions:
+  - lastTransitionTime: "2020-01-10T11:06:03Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v3

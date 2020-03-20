@@ -1,0 +1,130 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: "2020-02-10T10:34:39Z"
+  generation: 1
+  name: k8sregexname.constraints.gatekeeper.sh
+  resourceVersion: "88213248"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/k8sregexname.constraints.gatekeeper.sh
+  uid: 3c1c6b3d-55f0-4b2a-8a08-c64ea88164de
+spec:
+  conversion:
+    strategy: None
+  group: constraints.gatekeeper.sh
+  names:
+    kind: K8sRegexName
+    listKind: K8sRegexNameList
+    plural: k8sregexname
+    singular: k8sregexname
+  preserveUnknownFields: true
+  scope: Cluster
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          properties:
+            enforcementAction:
+              type: string
+            match:
+              properties:
+                kinds:
+                  items:
+                    properties:
+                      apiGroups:
+                        items:
+                          type: string
+                      kinds:
+                        items:
+                          type: string
+                  type: array
+                labelSelector:
+                  properties:
+                    matchExpressions:
+                      items:
+                        properties:
+                          key:
+                            type: string
+                          operator:
+                            enum:
+                            - In
+                            - NotIn
+                            - Exists
+                            - DoesNotExist
+                            type: string
+                          values:
+                            items:
+                              type: string
+                            type: array
+                      type: array
+                namespaceSelector:
+                  properties:
+                    matchExpressions:
+                      items:
+                        properties:
+                          key:
+                            type: string
+                          operator:
+                            enum:
+                            - In
+                            - NotIn
+                            - Exists
+                            - DoesNotExist
+                            type: string
+                          values:
+                            items:
+                              type: string
+                            type: array
+                      type: array
+                namespaces:
+                  items:
+                    type: string
+                  type: array
+            parameters:
+              properties:
+                message:
+                  type: string
+                regex:
+                  type: string
+  version: v1beta1
+  versions:
+  - name: v1beta1
+    served: true
+    storage: true
+  - name: v1alpha1
+    served: true
+    storage: false
+status:
+  acceptedNames:
+    kind: K8sRegexName
+    listKind: K8sRegexNameList
+    plural: k8sregexname
+    singular: k8sregexname
+  conditions:
+  - lastTransitionTime: "2020-02-10T10:34:39Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  - lastTransitionTime: "2020-02-10T10:34:40Z"
+    message: '[spec.validation.openAPIV3Schema.properties[spec].properties[match].properties[kinds].items.properties[apiGroups].type:
+      Required value: must not be empty for specified object fields, spec.validation.openAPIV3Schema.properties[spec].properties[match].properties[kinds].items.properties[kinds].type:
+      Required value: must not be empty for specified object fields, spec.validation.openAPIV3Schema.properties[spec].properties[match].properties[kinds].items.type:
+      Required value: must not be empty for specified array items, spec.validation.openAPIV3Schema.properties[spec].properties[match].properties[labelSelector].properties[matchExpressions].items.type:
+      Required value: must not be empty for specified array items, spec.validation.openAPIV3Schema.properties[spec].properties[match].properties[labelSelector].type:
+      Required value: must not be empty for specified object fields, spec.validation.openAPIV3Schema.properties[spec].properties[match].properties[namespaceSelector].properties[matchExpressions].items.type:
+      Required value: must not be empty for specified array items, spec.validation.openAPIV3Schema.properties[spec].properties[match].properties[namespaceSelector].type:
+      Required value: must not be empty for specified object fields, spec.validation.openAPIV3Schema.properties[spec].properties[match].type:
+      Required value: must not be empty for specified object fields, spec.validation.openAPIV3Schema.properties[spec].properties[parameters].type:
+      Required value: must not be empty for specified object fields, spec.validation.openAPIV3Schema.properties[spec].type:
+      Required value: must not be empty for specified object fields, spec.validation.openAPIV3Schema.type:
+      Required value: must not be empty at the root]'
+    reason: Violations
+    status: "True"
+    type: NonStructuralSchema
+  storedVersions:
+  - v1beta1

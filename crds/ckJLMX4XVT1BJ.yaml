@@ -1,0 +1,60 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    helm.sh/resource-policy: keep
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{"helm.sh/resource-policy":"keep"},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","app":"mixer","istio":"mixer-adapter","k8s-app":"istio","package":"cloudwatch"},"name":"cloudwatches.config.istio.io"},"spec":{"group":"config.istio.io","names":{"categories":["istio-io","policy-istio-io"],"kind":"cloudwatch","plural":"cloudwatches","singular":"cloudwatch"},"scope":"Namespaced","version":"v1alpha2"}}
+  creationTimestamp: "2019-08-30T08:04:57Z"
+  generation: 1
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    app: mixer
+    istio: mixer-adapter
+    k8s-app: istio
+    package: cloudwatch
+  name: cloudwatches.config.istio.io
+  resourceVersion: "27414069"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/cloudwatches.config.istio.io
+  uid: db75ccee-cafc-11e9-917e-4201ac100009
+spec:
+  conversion:
+    strategy: None
+  group: config.istio.io
+  names:
+    categories:
+    - istio-io
+    - policy-istio-io
+    kind: cloudwatch
+    listKind: cloudwatchList
+    plural: cloudwatches
+    singular: cloudwatch
+  preserveUnknownFields: true
+  scope: Namespaced
+  version: v1alpha2
+  versions:
+  - name: v1alpha2
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    categories:
+    - istio-io
+    - policy-istio-io
+    kind: cloudwatch
+    listKind: cloudwatchList
+    plural: cloudwatches
+    singular: cloudwatch
+  conditions:
+  - lastTransitionTime: "2019-08-30T08:04:57Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1alpha2

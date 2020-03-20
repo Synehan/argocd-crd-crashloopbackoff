@@ -1,0 +1,61 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    helm.sh/resource-policy: keep
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{"helm.sh/resource-policy":"keep"},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","app":"istio-pilot","chart":"istio","heritage":"Tiller","k8s-app":"istio","release":"istio"},"name":"sidecars.networking.istio.io"},"spec":{"group":"networking.istio.io","names":{"categories":["istio-io","networking-istio-io"],"kind":"Sidecar","plural":"sidecars","singular":"sidecar"},"scope":"Namespaced","version":"v1alpha3"}}
+  creationTimestamp: "2019-08-30T08:04:57Z"
+  generation: 1
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    app: istio-pilot
+    chart: istio
+    heritage: Tiller
+    k8s-app: istio
+    release: istio
+  name: sidecars.networking.istio.io
+  resourceVersion: "27414120"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/sidecars.networking.istio.io
+  uid: db7b774e-cafc-11e9-917e-4201ac100009
+spec:
+  conversion:
+    strategy: None
+  group: networking.istio.io
+  names:
+    categories:
+    - istio-io
+    - networking-istio-io
+    kind: Sidecar
+    listKind: SidecarList
+    plural: sidecars
+    singular: sidecar
+  preserveUnknownFields: true
+  scope: Namespaced
+  version: v1alpha3
+  versions:
+  - name: v1alpha3
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    categories:
+    - istio-io
+    - networking-istio-io
+    kind: Sidecar
+    listKind: SidecarList
+    plural: sidecars
+    singular: sidecar
+  conditions:
+  - lastTransitionTime: "2019-08-30T08:04:57Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1alpha3

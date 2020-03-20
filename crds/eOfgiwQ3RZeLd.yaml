@@ -1,0 +1,108 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    helm.sh/hook: crd-install
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{"helm.sh/hook":"crd-install"},"creationTimestamp":null,"labels":{"app":"dex-controller-controller","app.kubernetes.io/instance":"dex-controller","app.kubernetes.io/managed-by":"Tiller","app.kubernetes.io/name":"dex-controller","app.kubernetes.io/version":"1.0.2","helm.sh/chart":"dex-controller-0.1.6"},"name":"clients.dex.cloudplatform.renault.com"},"spec":{"group":"dex.cloudplatform.renault.com","names":{"kind":"Client","plural":"clients"},"scope":"Namespaced","validation":{"openAPIV3Schema":{"description":"Client is the Schema for the clients API","properties":{"apiVersion":{"description":"APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources","type":"string"},"kind":{"description":"Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds","type":"string"},"metadata":{"type":"object"},"spec":{"description":"ClientSpec defines the desired state of Client","properties":{"id":{"type":"string"},"logo_url":{"type":"string"},"name":{"type":"string"},"public":{"type":"boolean"},"redirect_uris":{"items":{"type":"string"},"type":"array"},"secret":{"type":"string"},"secretRef":{"description":"SecretRef is a reference where we can find the secret to use","properties":{"key":{"type":"string"},"name":{"type":"string"}},"required":["name"],"type":"object"},"trusted_peers":{"items":{"type":"string"},"type":"array"}},"type":"object"},"status":{"description":"ClientStatus defines the observed state of Client","type":"object"}},"type":"object"}},"version":"v1alpha"}}
+  creationTimestamp: "2019-09-06T12:57:58Z"
+  generation: 1
+  labels:
+    app: dex-controller-controller
+    app.kubernetes.io/instance: dex-controller
+    app.kubernetes.io/managed-by: Tiller
+    app.kubernetes.io/name: dex-controller
+    app.kubernetes.io/version: 1.0.2
+    helm.sh/chart: dex-controller-0.1.6
+  name: clients.dex.cloudplatform.renault.com
+  resourceVersion: "89488324"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/clients.dex.cloudplatform.renault.com
+  uid: f35e7f13-d0a5-11e9-a2f9-4201ac100006
+spec:
+  conversion:
+    strategy: None
+  group: dex.cloudplatform.renault.com
+  names:
+    kind: Client
+    listKind: ClientList
+    plural: clients
+    singular: client
+  preserveUnknownFields: true
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      description: Client is the Schema for the clients API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: ClientSpec defines the desired state of Client
+          properties:
+            id:
+              type: string
+            logo_url:
+              type: string
+            name:
+              type: string
+            public:
+              type: boolean
+            redirect_uris:
+              items:
+                type: string
+              type: array
+            secret:
+              type: string
+            secretRef:
+              description: SecretRef is a reference where we can find the secret to
+                use
+              properties:
+                key:
+                  type: string
+                name:
+                  type: string
+              required:
+              - name
+              type: object
+            trusted_peers:
+              items:
+                type: string
+              type: array
+          type: object
+        status:
+          description: ClientStatus defines the observed state of Client
+          type: object
+      type: object
+  version: v1alpha
+  versions:
+  - name: v1alpha
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: Client
+    listKind: ClientList
+    plural: clients
+    singular: client
+  conditions:
+  - lastTransitionTime: "2019-09-06T12:57:58Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1alpha

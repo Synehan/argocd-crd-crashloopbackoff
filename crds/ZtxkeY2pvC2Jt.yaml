@@ -1,0 +1,61 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    helm.sh/resource-policy: keep
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{"helm.sh/resource-policy":"keep"},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","app":"istio-pilot","heritage":"Tiller","istio":"rbac","k8s-app":"istio","release":"istio"},"name":"clusterrbacconfigs.rbac.istio.io"},"spec":{"group":"rbac.istio.io","names":{"categories":["istio-io","rbac-istio-io"],"kind":"ClusterRbacConfig","plural":"clusterrbacconfigs","singular":"clusterrbacconfig"},"scope":"Cluster","version":"v1alpha1"}}
+  creationTimestamp: "2019-08-30T08:04:50Z"
+  generation: 1
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    app: istio-pilot
+    heritage: Tiller
+    istio: rbac
+    k8s-app: istio
+    release: istio
+  name: clusterrbacconfigs.rbac.istio.io
+  resourceVersion: "27414072"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/clusterrbacconfigs.rbac.istio.io
+  uid: d7452c3e-cafc-11e9-8a79-4201ac10000a
+spec:
+  conversion:
+    strategy: None
+  group: rbac.istio.io
+  names:
+    categories:
+    - istio-io
+    - rbac-istio-io
+    kind: ClusterRbacConfig
+    listKind: ClusterRbacConfigList
+    plural: clusterrbacconfigs
+    singular: clusterrbacconfig
+  preserveUnknownFields: true
+  scope: Cluster
+  version: v1alpha1
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    categories:
+    - istio-io
+    - rbac-istio-io
+    kind: ClusterRbacConfig
+    listKind: ClusterRbacConfigList
+    plural: clusterrbacconfigs
+    singular: clusterrbacconfig
+  conditions:
+  - lastTransitionTime: "2019-08-30T08:04:50Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1alpha1

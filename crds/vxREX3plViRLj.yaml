@@ -1,0 +1,47 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{},"name":"etcdbackups.management.cattle.io"},"spec":{"conversion":{"strategy":"None"},"group":"management.cattle.io","names":{"kind":"EtcdBackup","listKind":"EtcdBackupList","plural":"etcdbackups","singular":"etcdbackup"},"scope":"Namespaced","version":"v3","versions":[{"name":"v3","served":true,"storage":true}]}}
+  creationTimestamp: "2020-01-10T11:05:40Z"
+  generation: 1
+  name: etcdbackups.management.cattle.io
+  resourceVersion: "68514558"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/etcdbackups.management.cattle.io
+  uid: 23660dec-3399-11ea-834d-4201ac100006
+spec:
+  conversion:
+    strategy: None
+  group: management.cattle.io
+  names:
+    kind: EtcdBackup
+    listKind: EtcdBackupList
+    plural: etcdbackups
+    singular: etcdbackup
+  preserveUnknownFields: true
+  scope: Namespaced
+  version: v3
+  versions:
+  - name: v3
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: EtcdBackup
+    listKind: EtcdBackupList
+    plural: etcdbackups
+    singular: etcdbackup
+  conditions:
+  - lastTransitionTime: "2020-01-10T11:05:40Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v3

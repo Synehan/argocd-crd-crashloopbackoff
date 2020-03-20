@@ -1,0 +1,47 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{},"name":"userattributes.management.cattle.io"},"spec":{"conversion":{"strategy":"None"},"group":"management.cattle.io","names":{"kind":"UserAttribute","listKind":"UserAttributeList","plural":"userattributes","singular":"userattribute"},"scope":"Cluster","version":"v3","versions":[{"name":"v3","served":true,"storage":true}]}}
+  creationTimestamp: "2020-01-10T11:05:38Z"
+  generation: 1
+  name: userattributes.management.cattle.io
+  resourceVersion: "68514509"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/userattributes.management.cattle.io
+  uid: 225012d1-3399-11ea-834d-4201ac100006
+spec:
+  conversion:
+    strategy: None
+  group: management.cattle.io
+  names:
+    kind: UserAttribute
+    listKind: UserAttributeList
+    plural: userattributes
+    singular: userattribute
+  preserveUnknownFields: true
+  scope: Cluster
+  version: v3
+  versions:
+  - name: v3
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: UserAttribute
+    listKind: UserAttributeList
+    plural: userattributes
+    singular: userattribute
+  conditions:
+  - lastTransitionTime: "2020-01-10T11:05:38Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v3

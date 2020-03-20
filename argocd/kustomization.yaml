@@ -1,0 +1,5 @@
+bases:
+- github.com/argoproj/argo-cd//manifests/cluster-install?ref=v1.4.2
+
+resources:
+- resources/argocd-by-argocd.yaml

@@ -1,0 +1,47 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{},"name":"listenconfigs.management.cattle.io"},"spec":{"conversion":{"strategy":"None"},"group":"management.cattle.io","names":{"kind":"ListenConfig","listKind":"ListenConfigList","plural":"listenconfigs","singular":"listenconfig"},"scope":"Cluster","version":"v3","versions":[{"name":"v3","served":true,"storage":true}]}}
+  creationTimestamp: "2020-01-10T11:05:40Z"
+  generation: 1
+  name: listenconfigs.management.cattle.io
+  resourceVersion: "68514574"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/listenconfigs.management.cattle.io
+  uid: 238e0bc1-3399-11ea-9722-4201ac100009
+spec:
+  conversion:
+    strategy: None
+  group: management.cattle.io
+  names:
+    kind: ListenConfig
+    listKind: ListenConfigList
+    plural: listenconfigs
+    singular: listenconfig
+  preserveUnknownFields: true
+  scope: Cluster
+  version: v3
+  versions:
+  - name: v3
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ListenConfig
+    listKind: ListenConfigList
+    plural: listenconfigs
+    singular: listenconfig
+  conditions:
+  - lastTransitionTime: "2020-01-10T11:05:40Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v3

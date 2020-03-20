@@ -1,0 +1,44 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: "2020-01-10T11:06:03Z"
+  generation: 1
+  name: features.management.cattle.io
+  resourceVersion: "68514827"
+  selfLink: /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/features.management.cattle.io
+  uid: 30e684d9-3399-11ea-834d-4201ac100006
+spec:
+  conversion:
+    strategy: None
+  group: management.cattle.io
+  names:
+    kind: Feature
+    listKind: FeatureList
+    plural: features
+    singular: feature
+  preserveUnknownFields: true
+  scope: Cluster
+  version: v3
+  versions:
+  - name: v3
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: Feature
+    listKind: FeatureList
+    plural: features
+    singular: feature
+  conditions:
+  - lastTransitionTime: "2020-01-10T11:06:03Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: null
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v3
