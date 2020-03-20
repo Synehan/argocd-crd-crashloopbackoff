@@ -7,10 +7,16 @@ Script to reproduce argocd-application-controller crashloopbackoff with a k8s cl
 ## Prerequisites
 
 - [kind](https://kind.sigs.k8s.io/) >= 0.7.0
+- kubectl >= 1.15
+- Git
 
 ## How to
 
+Clone this repository.
+
 ```bash
+cd <CLONED REPOSITORY>
+
 KIND_NAME=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '')
 K8S_VERSION="1.15.7"
 WAIT_TIME=5
@@ -35,4 +41,6 @@ Wait until argocd go to crashloopbackoff
 
 ## Clean Up
 
+```bash
 kind delete --name ${KIND_NAME}
+```
