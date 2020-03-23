@@ -21,7 +21,7 @@ KIND_NAME=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '')
 K8S_VERSION="1.15.7"
 WAIT_TIME=5
 
-kind create --name ${KIND_NAME} --config cluster.yaml --image kindest/node:v${K8S_VERSION}
+kind create cluster --name ${KIND_NAME} --config cluster.yaml --image kindest/node:v${K8S_VERSION}
 
 kubectl create ns argocd
 
@@ -29,7 +29,7 @@ kubectl config set-context --namespace argocd kind-${KIND_NAME}
 
 kubectl apply -k argocd
 
-kubectl wait --for=condition=Ready -l app.kubernetes.io/name=argocd-server pod
+kubectl wait --for=condition=Ready -l app.kubernetes.io/name=argocd-server pod --timeout=300s
 
 kubectl apply -f crds
 
@@ -42,5 +42,5 @@ Wait until argocd go to crashloopbackoff
 ## Clean Up
 
 ```bash
-kind delete --name ${KIND_NAME}
+kind delete cluster --name ${KIND_NAME}
 ```
