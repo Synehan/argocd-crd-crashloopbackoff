@@ -1,0 +1,10 @@
+bases:
+- github.com/argoproj/argo-cd//manifests/cluster-install?ref=v1.5.0-rc1
+
+images:
+  - name: argoproj/argocd
+    newName: synehan/argocd
+    newTag: latest
+
+resources:
+- resources/argocd-by-argocd.yaml
